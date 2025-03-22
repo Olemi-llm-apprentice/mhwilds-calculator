@@ -6,6 +6,7 @@ export * from "./Dialog";
 export * from "./ExportDialog";
 export * from "./ImportDialog";
 export * from "./InputContainer";
+export * from "./LanguageToggle";
 export * from "./MovesTable";
 export * from "./Notice";
 export * from "./NumberDisplay";

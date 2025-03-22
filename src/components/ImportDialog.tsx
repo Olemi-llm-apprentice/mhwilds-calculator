@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { ZodError } from "zod";
 import { CombinedBuffs } from "@/data";
 import { useModel } from "@/store";
-import text from "@/text";
+import text, { getText } from "@/text";
 import { importSchema } from "@/zod";
 import { Button } from "./Button";
 import { Card } from "./Card";
@@ -29,6 +29,11 @@ export const ImportDialog = () => {
   const [error, setError] = useState("");
   const [data, setData] = useState("");
   const [success, setSuccess] = useState(false);
+  const [clientReady, setClientReady] = useState(false);
+
+  useEffect(() => {
+    setClientReady(true);
+  }, []);
 
   const variant = useMemo(() => {
     if (success && warnings.length > 0) return "warning";
@@ -102,19 +107,21 @@ export const ImportDialog = () => {
     if (!open) setSuccess(false);
   }, [open]);
 
+  const importText = clientReady ? getText("IMPORT") : "";
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant="secondary" size="sm">
           <DownloadIcon className="h-4 w-4" />
-          Import
+          {importText}
         </Button>
       </DialogTrigger>
       <DialogContent>
         <Card>
           <DialogTitle asChild>
             <div className="flex items-start justify-between gap-2">
-              <h1>Import</h1>
+              <h1>{importText}</h1>
               <Button variant="text" size="icon" onClick={() => setOpen(false)}>
                 <XIcon className="h-4 w-4" />
               </Button>
@@ -131,7 +138,7 @@ export const ImportDialog = () => {
           <div className="flex justify-end gap-2">
             {message && <Notice variant={variant}>{message}</Notice>}
             <Button onClick={process}>
-              <DownloadIcon className="h-4 w-4" /> Import
+              <DownloadIcon className="h-4 w-4" /> {importText}
             </Button>
           </div>
         </Card>

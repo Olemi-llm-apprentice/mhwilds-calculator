@@ -1,5 +1,6 @@
 import type { Buff, BuffGroup } from "@/types";
 import { Select, type SelectProps } from ".";
+import { translateSkillName, translateSkillLevel } from "@/utils/translation";
 
 type Props = Omit<SelectProps<Buff | undefined>, "options"> & {
   skill: BuffGroup;
@@ -15,15 +16,19 @@ export function SkillSelect({
   const { name, levels } = skill;
   const options = [undefined, ...levels];
 
+  // スキル名を翻訳
+  const translatedName = translateSkillName(name);
+  // placeholder または 翻訳されたスキル名を使用
+  const displayPlaceholder = placeholder !== undefined ? placeholder : translatedName;
+
   return (
     <Select
       options={options}
       label={label}
       value={value}
-      labelFn={(opt) => opt?.name ?? ""}
+      labelFn={(opt) => opt ? translateSkillLevel(opt.name) : ""}
       onChangeValue={onChangeValue}
-      placeholder={placeholder ?? name}
-      // description={""}
+      placeholder={displayPlaceholder}
     />
   );
 }

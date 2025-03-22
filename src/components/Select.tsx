@@ -1,14 +1,15 @@
 "use client";
 
-import { InputContainer, type InputContainerProps } from "./InputContainer";
+import { InputContainer, InputContainerProps } from "./InputContainer";
 
 export interface SelectProps<T> extends InputContainerProps {
   options: T[];
-  value?: T;
+  value: T | undefined;
+  onChangeValue: (value: T) => void;
   labelFn?: (option: T) => string;
   keyFn?: (option: T) => string;
-  onChangeValue: (value: T) => void;
   placeholder?: string;
+  displayFn?: (option: T) => string;
   disabled?: boolean;
 }
 
@@ -18,11 +19,14 @@ export function Select<T>({
   value,
   labelFn = (o) => String(o),
   keyFn = labelFn,
+  displayFn,
   description,
   onChangeValue,
   placeholder,
   ...props
 }: SelectProps<T>) {
+  const displayValue = displayFn && value ? displayFn(value) : value ? labelFn(value) : "";
+  
   return (
     <InputContainer label={label} description={description}>
       <div className="relative">
@@ -39,11 +43,11 @@ export function Select<T>({
         >
           {options.map((option) => (
             <option key={keyFn(option)} value={keyFn(option)}>
-              {labelFn(option)}
+              {displayFn ? displayFn(option) : labelFn(option)}
             </option>
           ))}
         </select>
-        {!value && placeholder && (
+        {!value && placeholder !== undefined && (
           <p className="text-placeholder pointer-events-none absolute top-1/2 left-2 w-[calc(100%-2rem)] -translate-y-1/2 truncate pl-[1px] text-sm">
             {placeholder}
           </p>

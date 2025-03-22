@@ -29,6 +29,8 @@ import { ArmorSkills, SetSkills, WeaponSkills } from "@/data/skills";
 import { round } from "@/model";
 import { useCalcs, useGetters, useModel } from "@/store";
 import { Attack, Buff, SnapshotAttack, isRanged } from "@/types";
+import { getText } from "@/text";
+import { translateComboMode, translateComboModeDescription } from "@/utils/translation";
 
 const ComboModeOptions = ["Dynamic", "Snapshot"] as const;
 type ComboModeOption = (typeof ComboModeOptions)[number];
@@ -92,9 +94,9 @@ export default function Home() {
 
   const comboModeDescription = useMemo(() => {
     if (comboMode === "Snapshot") {
-      return "Captures the damage of an attack when it is added.";
+      return translateComboModeDescription("Captures the damage of an attack when it is added.");
     }
-    return "Re-calculates damage of all attacks when inputs change.";
+    return translateComboModeDescription("Re-calculates damage of all attacks when inputs change.");
   }, [comboMode]);
 
   const totalDamage = useMemo(() => {
@@ -155,29 +157,29 @@ export default function Home() {
         <div className="flex flex-2 flex-col gap-2">
           <Card>
             <div>
-              <h1>Weapon</h1>
+              <h1>{getText("WEAPON")}</h1>
               <h3>
-                {`Enable "Display Without Coefficient" in game options. Don't divide Element by 10.`}
+                {getText("DISPLAY_INSTRUCTIONS")}
               </h3>
             </div>
             <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
               <div className="col-span-2 lg:col-span-4">
                 <Select
-                  label="Weapon"
+                  label={getText("WEAPON")}
                   value={weapon}
                   options={[...Weapons]}
                   onChangeValue={setWeapon}
                 />
               </div>
               <NumberInput
-                label="Attack"
+                label={getText("ATTACK")}
                 value={attack}
                 onChangeValue={setAttack}
                 min={0}
                 step={5}
               />
               <NumberInput
-                label="Element"
+                label={getText("ELEMENT")}
                 value={element}
                 onChangeValue={setElement}
                 min={0}
@@ -185,7 +187,7 @@ export default function Home() {
                 disabled={["Light Bowgun", "Heavy Bowgun"].includes(weapon)}
               />
               <NumberInput
-                label="Affinity"
+                label={getText("AFFINITY")}
                 value={affinity}
                 onChangeValue={setAffinity}
                 step={5}
@@ -193,7 +195,7 @@ export default function Home() {
                 max={100}
               />
               <Select
-                label="Sharpness"
+                label={getText("SHARPNESS")}
                 value={sharpness}
                 disabled={isRanged(weapon)}
                 onChangeValue={setSharpness}
@@ -219,7 +221,7 @@ export default function Home() {
             <div>
               <div className="flex justify-between">
                 <div>
-                  <h1>Skills</h1>
+                  <h1>{getText("SKILLS")}</h1>
                 </div>
                 <Button
                   variant="text"
@@ -238,7 +240,7 @@ export default function Home() {
               )}
             </div>
             <div className="flex flex-col gap-2">
-              <p className="text-xs">Weapon</p>
+              <p className="text-xs">{getText("WEAPON_SKILL")}</p>
               <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {Object.entries(WeaponSkills).map(([k, s]) => {
                   if (hideSkills && !buffs[k]) return undefined;
@@ -254,7 +256,7 @@ export default function Home() {
                   );
                 })}
               </div>
-              <p className="text-xs">Armor</p>
+              <p className="text-xs">{getText("ARMOR_SKILL")}</p>
               <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {Object.entries(ArmorSkills).map(([k, s]) => {
                   if (hideSkills && !buffs[k]) return undefined;
@@ -270,7 +272,7 @@ export default function Home() {
                   );
                 })}
               </div>
-              <p className="text-xs">Set</p>
+              <p className="text-xs">{getText("SET_SKILL")}</p>
               <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {Object.entries(SetSkills).map(([k, s]) => {
                   if (hideSkills && !buffs[k]) return undefined;
@@ -289,7 +291,7 @@ export default function Home() {
           <Card>
             <div>
               <div className="flex justify-between">
-                <h1>Buffs</h1>
+                <h1>{getText("BUFFS")}</h1>
                 <Button
                   variant="text"
                   size="icon"
@@ -299,7 +301,7 @@ export default function Home() {
                 </Button>
               </div>
               {!hideBuffs && (
-                <h3>{"Calculate other unsupported buffs here."}</h3>
+                <h3>{getText("CALCULATE_UNSUPPORTED_BUFFS")}</h3>
               )}
             </div>
             <div className="flex flex-wrap gap-x-4 gap-y-0">
@@ -333,42 +335,42 @@ export default function Home() {
               })}
               {(!hideBuffs || miscAttack !== 0) && (
                 <NumberInput
-                  label="Attack (Flat)"
+                  label={getText("MISC_FLAT_ATTACK")}
                   value={miscAttack}
                   onChangeValue={setMiscAttack}
                 />
               )}
               {(!hideBuffs || miscAttackMul !== 0) && (
                 <NumberInput
-                  label="Attack (%)"
+                  label={getText("MISC_PERCENT_ATTACK")}
                   value={miscAttackMul}
                   onChangeValue={setMiscAttackMul}
                 />
               )}
               {(!hideBuffs || miscElement !== 0) && (
                 <NumberInput
-                  label="Element (Flat)"
+                  label={getText("MISC_FLAT_ELEMENT")}
                   value={miscElement}
                   onChangeValue={setMiscElement}
                 />
               )}
               {(!hideBuffs || miscElementMul !== 0) && (
                 <NumberInput
-                  label="Element (%)"
+                  label={getText("MISC_PERCENT_ELEMENT")}
                   value={miscElementMul}
                   onChangeValue={setMiscElementMul}
                 />
               )}
               {(!hideBuffs || miscAffinity !== 0) && (
                 <NumberInput
-                  label="Affinity (%)"
+                  label={getText("MISC_AFFINITY")}
                   value={miscAffinity}
                   onChangeValue={setMiscAffinity}
                 />
               )}
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-xs">Hunting Horn</h2>
+              <h2 className="text-xs">{getText("HUNTING_HORN")}</h2>
               <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
                 {Object.entries(HuntingHornBuffs).map(([k, b]) => {
                   if (hideBuffs && !buffs[k]) return undefined;
@@ -389,33 +391,33 @@ export default function Home() {
         <div className="flex flex-1 flex-col gap-2">
           <Card>
             <div>
-              <h1>Stats</h1>
+              <h1>{getText("STATS")}</h1>
             </div>
             <div>
-              <NumberDisplay label="Attack" value={uiAttack} />
-              <NumberDisplay label="Element" value={uiElement} />
-              <NumberDisplay label="Affinity" value={uiAffinity} suffix="%" />
-              <NumberDisplay label="Effective Attack" value={efr} />
-              <NumberDisplay label={"Effective Element"} value={efe} />
+              <NumberDisplay label={getText("ATTACK")} value={uiAttack} />
+              <NumberDisplay label={getText("ELEMENT")} value={uiElement} />
+              <NumberDisplay label={getText("AFFINITY")} value={uiAffinity} suffix="%" />
+              <NumberDisplay label={getText("EFFECTIVE_ATTACK")} value={efr} />
+              <NumberDisplay label={getText("EFFECTIVE_ELEMENT")} value={efe} />
             </div>
           </Card>
           <Card>
-            <h1>Damage</h1>
+            <h1>{getText("DAMAGE")}</h1>
             <div className="flex place-items-center">
               <Checkbox
-                label="Wound"
+                label={getText("WOUND")}
                 value={isWound}
                 onChangeValue={setIsWound}
               />
             </div>
             <div className="grid grid-cols-2 gap-2">
               <NumberInput
-                label="Hitzone (Raw)"
+                label={getText("HITZONE_RAW")}
                 value={rawHzv}
                 onChangeValue={setRawHzv}
               />
               <NumberInput
-                label="Hitzone (Element)"
+                label={getText("HITZONE_ELE")}
                 value={eleHzv}
                 onChangeValue={setEleHzv}
               />
@@ -427,22 +429,23 @@ export default function Home() {
         <div className="flex flex-1 flex-col gap-2">
           <Card>
             <div>
-              <h1>Combo</h1>
-              <h3>Click on attacks to add or remove them from your combo.</h3>
+              <h1>{getText("COMBO")}</h1>
+              <h3>{getText("COMBO_INSTRUCTIONS")}</h3>
             </div>
             <Select
-              label="Mode"
+              label={getText("MODE")}
               value={comboMode}
               options={[...ComboModeOptions]}
               onChangeValue={setComboMode}
               description={comboModeDescription}
+              displayFn={(mode) => translateComboMode(mode)}
             />
             <div>
               <NumberDisplay
-                label="Total Average"
+                label={getText("TOTAL_AVERAGE")}
                 value={round(totalDamage, 2)}
               />
-              <NumberDisplay label="Total Hits" value={totalHits} />
+              <NumberDisplay label={getText("TOTAL_HITS")} value={totalHits} />
             </div>
             <div className="flex justify-end">
               <Button
@@ -455,7 +458,7 @@ export default function Home() {
                 }}
               >
                 <TimerResetIcon className="h-4 w-4" />
-                Reset
+                {getText("RESET")}
               </Button>
             </div>
             {comboMode === "Dynamic" ? (

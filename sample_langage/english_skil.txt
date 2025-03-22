@@ -1,0 +1,194 @@
+
+Weapon
+Attack Boost	Increases attack power.
+Offensive Guard	Temporarily increases attack power after executing a perfectly-timed guard.
+Critical Eye	Increases affinity.
+Critical Boost	Increases the damage of critical hits.
+Critical Draw	Increases affinity when performing draw attacks. (Not effective while riding.)
+Fire Attack	Increases fire element attack power. (Elemental attack power has a maximum limit.)
+Water Attack	Increases water element attack power. (Elemental attack power has a maximum limit.)
+Ice Attack	Increases ice element attack power. (Elemental attack power has a maximum limit.)
+Thunder Attack	Increases thunder element attack power. (Elemental attack power has a maximum limit.)
+Dragon Attack	Increases dragon element attack power. (Elemental attack power has a maximum limit.)
+Poison Attack	Increases the rate of poison buildup. (Poison buildup has a maximum limit.)
+Paralysis Attack	Increases the rate of paralysis buildup. (Paralysis buildup has a maximum limit.)
+Sleep Attack	Increases the rate of sleep buildup. (Sleep buildup has a maximum limit.)
+Blast Attack	Increases the rate of blast buildup. (Blast buildup has a maximum limit.)
+Critical Element	Increases elemental damage (fire, water, thunder, ice, dragon) when landing critical hits.
+Critical Status	Increases abnormal status effects (paralysis, poison, sleep, blast) when landing critical hits.
+Charge Master	Increases element power and status buildup for charged attacks.
+Handicraft	Extends the weapon sharpness gauge. However, it will not increase the gauge past its maximum.
+Razor Sharp	Prevents your weapon from losing sharpness.
+Protective Polish	Weapon sharpness does not decrease for a set time after sharpening.
+Mind's Eye	Your attacks are deflected less and deal more damage to hard targets.
+Bludgeoner	Increases attack power when your weapon sharpness is low.
+Master's Touch	Prevents your weapon from losing sharpness during critical hits.
+Normal Shots	Increases the attack power of Normal Ammo, normal arrows, and Flying Swallow Shot.
+Piercing Shots	Increases the attack of the bowgun's Pierce Ammo, and the bow's Dragon Piercer and Thousand Dragons.
+Spread/Power Shots	Increases the attack of the bowgun's Spread Ammo and the bow's Power Shots and Quick Shots.
+Ballistics	Extends the range in which ammo and arrows have maximum power.
+Rapid Fire Up	Improves light bowgun rapid fire.
+Opening Shot	Increases the bowgun's reload speed and increases the power of bullets when fully loaded.
+Tetrad Shot	Increases affinity of bowgun ammo/ coatings from the fourth shot and attack of the fourth and sixth shots.
+Special Ammo Boost	Increases the power of the bowgun's special ammo, and the bow's Dragon Piercer, Thousand Dragons, and Tracer.
+Poison Functionality	Allows you to apply poison coatings.
+Para Functionality	Allows you to apply paralysis coatings.
+Sleep Functionality	Allows you to apply sleep coatings.
+Blast Functionality	Allows you to apply blast coatings.
+Exhaust Functionality	Allows you to apply exhaust coatings.
+Focus	Increases the fill rate for weapons with gauges and the charge rate for weapons with charge attacks.
+Power Prolonger	Allows long swords, dual blades, insect glaives, switch axes, and charge blades to stay powered up longer.
+Punishing Draw	Adds a stun effect to draw attacks and slightly increases attack power. (Not effective while riding.)
+Slugger	Makes it easier to stun monsters.
+Stamina Thief	Increases certain attacks' ability to exhaust monsters.
+Artillery	Strengthens explosive attacks like shells, Wyvern's Fire, charge blade phial attacks, and Sticky Ammo.
+Rapid Morph	Increases switch speed and power for switch axes and charge blades.
+Horn Maestro	Increases the effect duration of hunting horn melodies. (Effect lost when you change weapons.)
+Charge Up	Increases your power to induce stun when you hit a monster with a hammer's charged attack.
+Airborne	Increases the damage caused by jumping attacks.
+Poison Duration Up	Extends the duration of your poison's effect on monsters.
+Guard	Reduces knockbacks and stamina depletion when guarding.
+Guard Up	Allows you to guard against ordinarily unblockable attacks.
+Load Shells	Improves reloading, and increases the gunlance's shell capacity and charge blade's phial capacity.
+Speed Sharpening	Speeds up weapon sharpening when using a whetstone.
+Equip
+Resentment	Increases attack when you have recoverable damage (the red portion of your Health Gauge).
+Adrenaline Rush	Temporarily increases attack power after executing a perfectly-timed evade just as a monster attacks.
+Peak Performance	Increases attack when your health is full.
+Counterstrike	Temporarily increases attack power after being knocked back.
+Weakness Exploit	Increases the affinity of attacks that exploit a monster's weak points and wounds.
+Maximum Might	Increases affinity if stamina is kept full for a period of time.
+Convert Element	After taking elemental damage, temporarily grants you dragon element effects. (Cooldown after effect ends.)
+Defense Boost	Increases defense. Also improves resistances at higher levels.
+Divine Blessing	Has a predetermined chance of reducing the damage you take.
+Fire Resistance	Increases fire resistance. Also improves defense at higher levels.
+Water Resistance	Increases water resistance. Also improves defense at higher levels.
+Thunder Resistance	Increases thunder resistance. Also improves defense at higher levels.
+Ice Resistance	Increases ice resistance. Also improves defense at higher levels.
+Dragon Resistance	Increases dragon resistance. Also improves defense at higher levels.
+Poison Resistance	Reduces damage while poisoned.
+Paralysis Resistance	Reduces the duration of paralysis.
+Sleep Resistance	Reduces the duration of sleep.
+Iron Skin	Grants protection against defense down.
+Blight Resistance	Grants protection against all elemental blights.
+Stun Resistance	Reduces the duration of stun.
+Bleeding Resistance	Grants protection against bleeding.
+Bind Resistance	Grants protection against webbed status and frostblight.
+Blast Resistance	Grants protection against blastblight.
+Stench Resistance	Grants protection against stench.
+Adaptability	Grants protection against environmental damage, such as from heat or cold.
+Recovery Up	Increases the amount recovered when restoring health.
+Recovery Speed	Speeds healing of recoverable damage (the red portion of the Health Gauge).
+Survival Expert	Extra health is recovered from environmental interactables.
+Constitution	Reduces stamina depletion when evading, blocking, or doing certain other actions.
+Stamina Surge	Speeds up stamina recovery.
+Marathon Runner	Slows down stamina depletion for actions that continuously drain stamina (such as dashing).
+Hunger Resistance	Reduces maximum stamina depletion over time.
+Agitator	Increases attack power and affinity when large monsters become enraged.
+Latent Power	Temporarily increases affinity and reduces stamina depletion when certain conditions are met.
+Heroics	Increases attack power and defense when health drops to 35% or lower.
+Burst	Continuously landing hits gradually increases attack and elemental attack. (Amount increased depends on weapon.)
+Foray	Increases attack power and affinity against large monsters affected by poison or paralysis.
+Flayer	Makes it easier to inflict wounds. Upon inflicting enough damage, also deals additional non-elemental damage.
+Palico Rally	Powers up Palicoes.
+Partbreaker	Makes it easier to break large monster parts, and increases damage dealt when destroying a wound with a Focus Strike.
+Coalescence	Temporarily increases elemental attack power and status effects after recovering from blights or abnormal status.
+Ambush	Temporarily increases damage to large monsters with a successful Sneak Attack.
+Antivirus	Once infected, makes it easier to overcome the Frenzy and increases affinity if cured.
+Elemental Absorption	After taking elemental damage, temporarily grants you element effects. (Cooldown after effect ends)
+Self-Improvement	Attack and defense increase as time passes while on a quest. (The maximum is reached after 30 minutes.)
+Evade Window	Extends the invulnerability period when evading.
+Evade Extender	Increases evade distance.
+Earplugs	Grants protection from large monsters' roars.
+Quick Sheathe	Speeds up weapon sheathing.
+Windproof	Grants protection against wind pressure.
+Tremor Resistance	Grants protection against ground tremors.
+Flinch Free	Prevents knockbacks and other reactions to small damage.
+Intimidator	Reduces the chance small monsters will attack after spotting you. (Has no effect on certain monsters.)
+Speed Eating	Increases meat-eating and item-consumption speed.
+Aquatic/Oilsilt Mobility	Grants resistance against impairments to mobility while in water, oilsilt, or streams.
+Shock Absorber	Disables damage reactions when you hit a friend or when a friend hits you.
+Leap of Faith	Allows you to do a dive-evade when facing towards large monsters and extends the dive-evade distance.
+Jump Master	Prevents attacks from knocking you back during a jump.
+Cliffhanger	Decreases stamina depletion when climbing on vines.
+Wide-Range	Allows the effects of certain items to also affect nearby allies.
+Tool Specialist	Reduces the recharge time for specialized tools.
+Bombardier	Increases the damage of explosive items.
+Mushroomancer	Lets you digest mushrooms that would otherwise be inedible and gain their advantageous effects.
+Item Prolonger	Extends the duration of some item effects.
+Free Meal	Gives you a predetermined chance of consuming a food or drink item for free.
+Blindsider	Improves the effectiveness of flash attacks and items.
+Botanist	Increases the quantity of herbs and other consumable items you gather.
+Geologist	Increases the number of items you gain at gathering points.
+Entomologist	The bodies of small insect monsters won't be destroyed, allowing them to be carved.
+Outdoorsman	Improves fishing, grilling, and transporting abilities.
+Group
+Neopteron Alert	
+3 → Increases the amount of honey you gain from gathering points.
+Neopteron Camouflage	
+3 → Increases movement speed while crouching, and makes it easier to escape large monsters' detection.
+Scaling Prowess	
+3 → Makes it easier to mount monsters and to wound them once mounted.
+Scale Layering	
+3 → Temporarily reduces stamina depletion when health is at 40% or lower.
+Flexible Leathercraft	
+3 → Increases gathering speed, and prevents knock back when gathering or carving.
+Buttery Leathercraft	
+3 → Increases your affinity temporarily when sliding on terrain.
+Fortifying Pelt	
+3 → Increases attack and defense after fainting during a quest. (Can be used twice.)
+Alluring Pelt	
+3 → Increases the attention drawn to you when attacking a monster.
+Lord's Favor	
+3 → Temporarily increases attack power when using effects like Melody Effects that affect companions in range.
+Lord's Fury	
+3 → Increases attack when inflicted with ailments.
+Guardian's Pulse	
+3 → Increases recovery speed of stamina and red gauge when near Wylkrystals.
+Guardian's Protection	
+3 → Reduces elemental and unique damage while in the Ruins of Wyveria.
+Imparted Wisdom	
+3 → Increases the chance of finding rare gathering points.
+Series
+Doshaguma's Might	
+2 → Temporarily grants attack +10 after a successful Power Clash or Offset attack
+4 → Temporarily grants attack +25 after a successful Power Clash or Offset attack
+Rathalos's Flare	
+2 → Chance to deal additional fire damage after landing an attack.
+4 → Increases additional fire damage after landing an attack.
+Xu Wu's Vigor	
+2 → Temporarily grants attack +15 after eating items such as well-done steak.
+4 → Temporarily grants attack +25 after eating items such as well-done steak.
+Gravios's Protection	
+2 → Reduces the damage you take by 5% when your health is full.
+4 → Reduces the damage you take by 10% when your health is full.
+Blangonga's Spirit	
+2 → Using the To Victory! gesture moderately increases attack temporarily to nearby allies. Greatly effects Palicoes and Support Hunters.
+4 → Using the To Victory! gesture increases attack temporarily to nearby allies. Greatly effects Palicoes and Support Hunters.
+Ebony Odogaron's Power	
+2 → Extends the duration of the Burst skill and grants attack +3 while Burst is active.
+4 → Further extends the duration of the Burst skill and grants attack +10 while Burst is active.
+Fulgur Anjanath's Will	
+2 → Grants an additional Stamina Gauge.
+4 → Grants an additional long Stamina Gauge.
+Uth Duna's Cover	
+2 → Increases defense temporarily when using a specialized tool.
+4 → Greatly increases defense and resistance temporarily when using a specialized tool.
+Rey Dau's Voltage	
+2 → Moderately extends the activation time of the Latent Power skill.
+4 → Extends the activation time of the Latent Power skill.
+Nu Udra's Mutiny	
+2 → Deals moderate additional damage while the Resentment skill is active.
+4 → Deals additional damage while the Resentment skill is active.
+Jin Dahaad's Revolt	
+2 → Increases attack after recovering from webbed status, frostblight, being pinned, or a Power Clash.
+4 → Greatly increases attack after recovering from webbed status, frostblight, being pinned, or a Power Clash.
+Gore Magala's Tyranny	
+2 → Infects you with Frenzy when against large monsters.
+4 → Infects you with Frenzy and raises attack when against large monsters. Attack power increases upon recovery.
+Arkveld's Hunger	
+2 → Regenerates a small amount of your health as you continually attack a monster. Recovery varies by weapon.
+4 → Regenerates your health as you continually attack a monster. Recovery varies by weapon.
+Guardian Arkveld's Vitality	
+2 → Restores a moderate amount of health when destroying a wound on a large monster.
+4 → Restores health when destroying a wound on a large monster.

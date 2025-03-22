@@ -1,8 +1,8 @@
 import { CopyIcon, XIcon } from "lucide-react";
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState, useEffect } from "react";
 import { CombinedBuffs } from "@/data";
 import { useModel } from "@/store";
-import text from "@/text";
+import text, { getText } from "@/text";
 import { Button } from "./Button";
 import { Card } from "./Card";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "./Dialog";
@@ -23,6 +23,12 @@ export const ExportDialog = () => {
 
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [clientReady, setClientReady] = useState(false);
+
+  // クライアントサイドでのみ実行されるようにする
+  useEffect(() => {
+    setClientReady(true);
+  }, []);
 
   const data = useMemo(
     () =>
@@ -73,19 +79,23 @@ export const ExportDialog = () => {
     }, 3000);
   };
 
+  const exportText = clientReady ? getText("EXPORT") : "";
+  const copyText = clientReady ? getText("COPY") : "";
+  const copiedText = clientReady ? getText("COPIED") : "";
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button size="sm">
           <CopyIcon className="h-4 w-4" />
-          Export
+          {exportText}
         </Button>
       </DialogTrigger>
       <DialogContent>
         <Card>
           <DialogTitle asChild>
             <div className="flex items-start justify-between gap-2">
-              <h1>Export</h1>
+              <h1>{exportText}</h1>
               <Button variant="text" size="icon" onClick={() => setOpen(false)}>
                 <XIcon className="h-4 w-4" />
               </Button>
@@ -99,9 +109,9 @@ export const ExportDialog = () => {
             readOnly
           />
           <div className="flex justify-end gap-2">
-            {copied && <Notice variant="success">Copied to clipboard.</Notice>}
+            {copied && <Notice variant="success">{copiedText}</Notice>}
             <Button onClick={copy}>
-              <CopyIcon className="h-4 w-4" /> Copy
+              <CopyIcon className="h-4 w-4" /> {copyText}
             </Button>
           </div>
         </Card>
